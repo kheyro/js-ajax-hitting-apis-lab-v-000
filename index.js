@@ -29,4 +29,11 @@ function displayCommits() {
   document.getElementById('details').innerHTML = commitsList
 }
 
-function
+function getBranches() {
+  const req = new XMLHttpRequest()
+  let repo = el.dataset.repo
+  let username = document.getElementById('username').value
+  req.addEventListener("load", displayCommits);
+  req.open("GET", 'https://api.github.com/repos/' + username + '/' + repo + '/commits')
+  req.send()
+}
