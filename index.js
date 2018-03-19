@@ -9,7 +9,7 @@ function getRepositories() {
 function displayRepositories() {
   let repo = JSON.parse(this.responseText)
   console.log(repo)
-  let repoList = `<ul>${repo.map(repo => '<li><a data-repository="' + repo.name + '" href="#" onclick="getCommits(this)">' + repo.name + '</a> - <a href="' + repo.url + '">' + repo.url + '</a> - <a href="#" onclick="getBranches(this)" data-repository="' + repo.name + '">Branches</a></li>' ).join('')}</ul>`
+  let repoList = `<ul>${repo.map(repo => '<li><a data-repository="' + repo.name + '" href="#" onclick="getCommits(this)">' + repo.name + '</a> - <a href="' + repo.url + '">' + repo.html_url + '</a> - <a href="#" onclick="getBranches(this)" data-repository="' + repo.name + '">Branches</a></li>' ).join('')}</ul>`
   document.getElementById('repositories').innerHTML = repoList
 }
 
