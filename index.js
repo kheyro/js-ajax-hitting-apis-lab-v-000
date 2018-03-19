@@ -8,4 +8,5 @@ function getRepositories() {
 
 function showRepositories() {
   let repo = JSON.parse(this.responseText)
+  let repoList = `<ul>${repo.map(repo => '<li></li>' ).join('')}`
 }
