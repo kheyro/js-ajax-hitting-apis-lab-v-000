@@ -13,3 +13,10 @@ function displayRepositories() {
   let repoList = `<ul>${repo.map(repo => '<li><a href="' + repo.url + '">' + repo.name + '</a></li>' ).join('')}</ul>`
   document.getElementById('repositories').innerHTML = repoList
 }
+
+function displayCommits() {
+  let repo = JSON.parse(this.responseText)
+  console.log(repo)
+  let repoList = `<ul>${repo.map(repo => '<li><a href="' + repo.url + '">' + repo.name + '</a></li>' ).join('')}</ul>`
+  document.getElementById('repositories').innerHTML = repoList
+}
