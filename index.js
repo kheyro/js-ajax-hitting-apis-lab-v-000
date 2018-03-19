@@ -37,3 +37,10 @@ function getBranches() {
   req.open("GET", 'https://api.github.com/repos/' + username + '/' + repo + '/branches')
   req.send()
 }
+
+function displayBranches() {
+  let branches = JSON.parse(this.responseText)
+  console.log(branches)
+  let branchesList = `<ul>${branches.map(commit => '<li>' + branche.name + '</li>' ).join('')}</ul>`
+  document.getElementById('details').innerHTML = commitsList
+}
