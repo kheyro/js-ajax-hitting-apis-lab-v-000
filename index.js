@@ -2,7 +2,6 @@ function getRepositories() {
   const req = new XMLHttpRequest()
   let username = document.getElementById('username').value
   req.addEventListener("load", displayRepositories);
-  req.addEventListener("load", displayCommits);
   req.open("GET", 'https://api.github.com/users/' + username + '/repos')
   req.send()
 }
@@ -14,6 +13,10 @@ function displayRepositories() {
   document.getElementById('repositories').innerHTML = repoList
 }
 
-function displayCommits() {
-  
+function getCommits(el) {
+  let repo = el.dataset.repo
+  let username = document.getElementById('username').value
+  req.addEventListener("load", displayCommits);
+  req.open("GET", 'https://api.github.com/users/' + username + '/repos')
+  req.send()
 }
