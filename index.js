@@ -17,6 +17,6 @@ function getCommits(el) {
   let repo = el.dataset.repo
   let username = document.getElementById('username').value
   req.addEventListener("load", displayCommits);
-  req.open("GET", 'https://api.github.com/users/' + username + '/repos')
+  req.open("GET", 'https://api.github.com/repos/' + username + '/' + repo + '/commits')
   req.send()
 }
