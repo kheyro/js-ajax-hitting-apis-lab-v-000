@@ -25,7 +25,7 @@ function getCommits(el) {
 function displayCommits() {
   let commits = JSON.parse(this.responseText)
   console.log(commits)
-  let commitsList = `<ul>${commits.map(commit => '<li>' + commit.commit.message + '</li>' ).join('')}</ul>`
+  let commitsList = `<ul>${commits.map(commit => '<li>' + commit.author.name + ' : '+ commit.commit.message + '</li>' ).join('')}</ul>`
   document.getElementById('details').innerHTML = commitsList
 }
 
