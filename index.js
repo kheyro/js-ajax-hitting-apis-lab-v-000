@@ -7,5 +7,5 @@ function getRepositories() {
 }
 
 function showRepositories() {
-  
+  let repo = JSON.parse(this.responseText)
 }
