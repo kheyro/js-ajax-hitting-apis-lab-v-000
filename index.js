@@ -9,7 +9,7 @@ function getRepositories() {
 function displayRepositories() {
   let repo = JSON.parse(this.responseText)
   console.log(repo)
-  let repoList = `<ul>${repo.map(repo => '<li><a data-repo="' + repo.name + '" href="#" onclick="getCommits(this)">' + repo.name + '</a> - <a href="' + repo.url + '">' + repo.url + '</a></li>' ).join('')}</ul>`
+  let repoList = `<ul>${repo.map(repo => '<li><a data-repo="' + repo.name + '" href="#" onclick="getCommits(this)">' + repo.name + '</a> - <a href="' + repo.url + '">' + repo.url + '</a> - <a href="#" onclick="getBranches()">Branches</a></li>' ).join('')}</ul>`
   document.getElementById('repositories').innerHTML = repoList
 }
 
@@ -28,3 +28,5 @@ function displayCommits() {
   let commitsList = `<ul>${commits.map(commit => '<li>' + commit.commit.message + '</li>' ).join('')}</ul>`
   document.getElementById('details').innerHTML = commitsList
 }
+
+function
