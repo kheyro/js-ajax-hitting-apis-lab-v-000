@@ -29,7 +29,7 @@ function displayCommits() {
   document.getElementById('details').innerHTML = commitsList
 }
 
-function getBranches() {
+function getBranches(el) {
   const req = new XMLHttpRequest()
   let repo = el.dataset.repo
   let username = document.getElementById('username').value
