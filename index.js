@@ -33,7 +33,7 @@ function getBranches() {
   const req = new XMLHttpRequest()
   let repo = el.dataset.repo
   let username = document.getElementById('username').value
-  req.addEventListener("load", displayCommits);
+  req.addEventListener("load", displayBranches);
   req.open("GET", 'https://api.github.com/repos/' + username + '/' + repo + '/branches')
   req.send()
 }
