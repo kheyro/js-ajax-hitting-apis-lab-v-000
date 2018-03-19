@@ -25,5 +25,5 @@ function displayRepositories() {
   let commits = JSON.parse(this.responseText)
   console.log(repo)
   let commitsList = `<ul>${commits.map(repo => '<li><a data-repo="' + repo.name + '" href="' + repo.url + '" onsubmit="displayCommits(this)">' + repo.name + '</a></li>' ).join('')}</ul>`
-  document.getElementById('details').innerHTML = repoList
+  document.getElementById('details').innerHTML = commitsList
 }
