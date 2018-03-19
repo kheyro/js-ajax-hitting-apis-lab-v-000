@@ -21,7 +21,7 @@ function getCommits(el) {
   req.send()
 }
 
-function displayRepositories() {
+function displayCommits() {
   let commits = JSON.parse(this.responseText)
   console.log(commits)
   let commitsList = `<ul>${commits.map(commit => '<li>' + commit.message + '</li>' ).join('')}</ul>`
